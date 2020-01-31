@@ -4,6 +4,7 @@ const isAuth = require('../middleware/is-auth');
 const isAdmin = require('../middleware/is-admin')
 
 router.post('/create',typeController.createType)
-router.post('/models/:type', typeController.getModelsFromOneType)
+router.get('/models/:type', typeController.getModelsFromOneType)
+router.get('/all', typeController.getAllTypes)
 
 module.exports = router;

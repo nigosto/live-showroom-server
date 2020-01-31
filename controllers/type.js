@@ -16,5 +16,9 @@ module.exports = {
         let {type} = req.params
         let typeDb = await Type.find({name: type}).populate('models');
         res.status(200).json({message: "Models fetched successfully!", models: typeDb[0].models})
+    },
+    getAllTypes: async (req,res,next) => {
+        let types = await Type.find();
+        res.status(200).json({message: 'Types fetched successfully!', types})
     }
 }

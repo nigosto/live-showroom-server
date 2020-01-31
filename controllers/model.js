@@ -31,7 +31,7 @@ module.exports = {
             let model = await Model.create({
                 path: "http://" + req.hostname + ":9999/content/" +  req.file.originalname,
                 type: type[0]._id,
-                name: req.file.originalname
+                name: req.body.name
             })
 
             type[0].models.push(model._id)

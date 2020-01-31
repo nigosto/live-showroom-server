@@ -43,8 +43,6 @@ module.exports = {
           lastName,
           hashedPassword,
           username,
-          articles: [],
-          comments: [],
           salt,
           roles: ['User']
         }).then((user) => {
