@@ -5,7 +5,7 @@ const modelRoutes = require('./routes/model')
 const typeRoutes = require('./routes/type')
 const materialRoutes = require('./routes/material')
 require('./database/database')();
-const port = 9999;
+const port = 8080;
 const app = express();
 const cors = require('cors');
 const path = require('path')

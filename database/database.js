@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const User = require('../models/User');
 mongoose.Promise = global.Promise;
 module.exports = () => {
-    mongoose.connect('mongodb://localhost:27017/live-showroom-db', {
+    mongoose.connect('mongodb://liveshowroom:liveshowroom123@ds040637.mlab.com:40637/live-showroom-db', {
         useNewUrlParser: true
     });       
     const db = mongoose.connection;
