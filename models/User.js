@@ -28,7 +28,11 @@ const userSchema = new Schema({
     type: Schema.Types.String,
     required: true
   },
-  roles: [{type: Schema.Types.String, required: true}]
+  roles: [{type: Schema.Types.String, required: true}],
+  inventory: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Model'
+  }]
 });
 
 userSchema.method({
