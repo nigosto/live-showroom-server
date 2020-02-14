@@ -27,7 +27,7 @@ module.exports = {
             let model = await Model.find({name: req.body.model})
             
             let material = await Material.create({
-                path: "http://" + req.hostname + ":9999/content/" +  req.file.originalname,
+                path: "https://" + req.hostname + "/content/" +  req.file.originalname,
                 model: model[0]._id,
                 name: req.file.originalname
             })
