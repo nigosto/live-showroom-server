@@ -7,5 +7,7 @@ router.post('/upload',modelController.uploadModel )
 router.post('/upload/image/:name',modelController.uploadImage )
 router.get('/default', modelController.getDefaultModels)
 router.get('/get/:id', modelController.getModelById)
+router.post('/inventory/add/:userId', modelController.addModelToInventory)
+router.get('/inventory/get/:userId', modelController.getModelsFromInventory)
 
 module.exports = router;

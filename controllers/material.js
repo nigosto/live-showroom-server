@@ -36,7 +36,7 @@ module.exports = {
             await model[0].save()
             await material.save()
 
-            return res.status(200).send(req.file)
+            return res.status(200).json({message: "Material added successfully!"})
         })
     },
 }
