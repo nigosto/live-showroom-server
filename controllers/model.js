@@ -87,6 +87,11 @@ module.exports = {
     getModelsFromInventory: async (req, res, next) => {
         let {userId} = req.params;
         let user = await User.findById(userId).populate('inventory');
-        res.status(200).json({message: "Inventory fetched successfully!", inventory: user.inventory})
+        let models = []
+        for(let i = 0; i < user.inventory.length; i++) {
+            let material = await Material.findById(user.inventory[i].materials[0])
+            models.push({path: user.inventory[i].path, name: user.inventory[i].name, material: material.path, image: user.inventory[i].image, _id: user.inventory[i]._id})
+        }
+        res.status(200).json({message: "Inventory fetched successfully!", inventory: models})
     }
 } 
