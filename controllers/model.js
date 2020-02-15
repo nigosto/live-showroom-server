@@ -29,7 +29,7 @@ module.exports = {
             let type = await Type.find({ name: req.body.type })
 
             let model = await Model.create({
-                path: "http://" + req.hostname + ":9999/content/" + req.file.originalname,
+                path: "https://" + req.hostname + "/content/" +  req.file.originalname,
                 type: type[0]._id,
                 name: req.body.name
             })
@@ -62,8 +62,8 @@ module.exports = {
                 return res.status(500).json(err)
             }
 
-            let model = await Model.find({ name: req.params.name })
-            model[0].image = "http://" + req.hostname + ":9999/content/" + req.file.originalname;
+            let model = await Model.find({name: req.params.name})
+            model[0].image = "https://" + req.hostname + "/content/" +  req.file.originalname;
             await model[0].save()
             console.log(model[0])
 
